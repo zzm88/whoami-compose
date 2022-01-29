@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  whoami:
+    networks:
+      - some_network
+
+
+    image: jwilder/whoami
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=whoami.local
+      - VIRTUAL_PORT=8000
+
+
+networks:
+    some_network:
+            external:
+                    name: some_network
